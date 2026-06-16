@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dkp0w54txjbgx"]
+
+[ext_resource type="Script" uid="uid://vmo3neguj7yw" path="res://Scripts/player.gd" id="1_7odk6"]
+[ext_resource type="Texture2D" uid="uid://df0g74lnj7u5r" path="res://Assets/Character/yellowbird-midflap.png" id="1_pa26r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pa26r"]
+
+[node name="Flappy" type="CharacterBody2D" unique_id=1292929994]
+script = ExtResource("1_7odk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=261222424]
+scale = Vector2(1.6800003, 1.239999)
+shape = SubResource("CircleShape2D_pa26r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766566262]
+texture = ExtResource("1_pa26r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790840007]
