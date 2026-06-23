@@ -2,8 +2,35 @@
 
 [ext_resource type="Script" uid="uid://vmo3neguj7yw" path="res://Scripts/player.gd" id="1_7odk6"]
 [ext_resource type="Texture2D" uid="uid://df0g74lnj7u5r" path="res://Assets/Character/yellowbird-midflap.png" id="1_pa26r"]
+[ext_resource type="Texture2D" uid="uid://bwodhlkncdrnw" path="res://Assets/Character/yellowbird-downflap.png" id="3_ahiyn"]
+[ext_resource type="Texture2D" uid="uid://dwhg41bqjmd7s" path="res://Assets/Character/yellowbird-upflap.png" id="4_g7ypk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pa26r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35ddc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pa26r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ahiyn")
+}],
+"loop": true,
+"name": &"downflap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pa26r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g7ypk")
+}],
+"loop": true,
+"name": &"upflap",
+"speed": 5.0
+}]
 
 [node name="Flappy" type="CharacterBody2D" unique_id=1292929994]
 script = ExtResource("1_7odk6")
@@ -12,7 +39,7 @@ script = ExtResource("1_7odk6")
 scale = Vector2(1.6800003, 1.239999)
 shape = SubResource("CircleShape2D_pa26r")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766566262]
-texture = ExtResource("1_pa26r")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=790840007]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=120957826]
+sprite_frames = SubResource("SpriteFrames_35ddc")
+animation = &"upflap"
+frame_progress = 0.011858239
