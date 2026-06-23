@@ -11,11 +11,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 
+	velocity = Vector2.ZERO
+	velocity.x = 1000.0
+
 	if Input.is_action_pressed("flap"):
-		velocity.y -= gravity * delta
+		velocity.y = -1000.0
 	else:
-		velocity.y += gravity * delta
+		velocity.y = 2000.0
 		
-	velocity.x += 10
+	
 
 	move_and_slide()
