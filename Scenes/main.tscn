@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dgvhh7t4uavtr" path="res://Assets/base.png" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dkp0w54txjbgx" path="res://Scenes/flappy.tscn" id="2_bo1nx"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
+distance = 51.2
+
 [node name="Game" type="Node2D" unique_id=128420177]
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=315297098]
@@ -22,6 +25,15 @@ texture = ExtResource("1_jjgbg")
 position = Vector2(1050, 850)
 scale = Vector2(1.25, 2)
 texture = ExtResource("2_8gbba")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ParallaxBackground/Ground" unique_id=2145902542]
+position = Vector2(-840, -425)
+scale = Vector2(0.8, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Ground/StaticBody2D" unique_id=1974447109]
+position = Vector2(1050, 850)
+scale = Vector2(1.25, 2)
+shape = SubResource("WorldBoundaryShape2D_8gbba")
 
 [node name="Flappy" parent="." unique_id=656714235 instance=ExtResource("2_bo1nx")]
 position = Vector2(37, 582)
