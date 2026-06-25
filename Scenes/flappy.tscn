@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwhg41bqjmd7s" path="res://Assets/Character/yellowbird-upflap.png" id="4_g7ypk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pa26r"]
+radius = 8.928571
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_35ddc"]
 animations = [{

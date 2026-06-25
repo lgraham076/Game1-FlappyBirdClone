@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://y6jqol4bjoul"]
 
 [ext_resource type="Texture2D" uid="uid://cnk2nu510n4qe" path="res://Assets/Background/background-day.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://yu2sqgh3dpkd" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dgvhh7t4uavtr" path="res://Assets/base.png" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dkp0w54txjbgx" path="res://Scenes/flappy.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://b85abq8dr7cms" path="res://Scenes/pipes.tscn" id="3_jjvhh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
 distance = 51.2
 
 [node name="Game" type="Node2D" unique_id=128420177]
+script = ExtResource("1_kry3j")
+obstacle = ExtResource("3_jjvhh")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=315297098]
 texture_filter = 1
@@ -34,6 +38,9 @@ scale = Vector2(0.8, 0.5)
 position = Vector2(1050, 850)
 scale = Vector2(1.25, 2)
 shape = SubResource("WorldBoundaryShape2D_8gbba")
+
+[node name="Pipes" parent="ParallaxBackground" unique_id=699865723 instance=ExtResource("3_jjvhh")]
+position = Vector2(1050, 600)
 
 [node name="Flappy" parent="." unique_id=656714235 instance=ExtResource("2_bo1nx")]
 position = Vector2(37, 582)
